@@ -1,0 +1,71 @@
+<section class="row">
+  <!--<section class="card padding col s4">
+    <section class="card-body">
+      <h3>Registre al empleado</h3>
+    </section>
+
+
+    <form #empleadoForm="ngForm" (ngSubmit)="addEmpleado(empleadoForm.value)">
+
+      <div class="input-field">
+        <input id="nombres" type="text" class="validate" [(ngModel)]="empleadoService.selectedEmpleado.nombre">
+        <label for="nombres">Nombres y Apellidos</label>
+      </div>
+      <div class="input-field">
+        <input id="cargo" type="text" class="validate" [(ngModel)]="empleadoService.selectedEmpleado.cargo">
+        <label for="cargo">Cargo</label>
+      </div>
+      <div class="input-field">
+        <input id="departamento" type="text" class="validate"
+          [(ngModel)]="empleadoService.selectedEmpleado.departamento">
+        <label for="departamento">Departamento</label>
+      </div>
+      <div class="input-field">
+        <input id="sueldo" type="text" class="validate" [(ngModel)]="empleadoService.selectedEmpleado.sueldo">
+        <label for="sueldo">Sueldo</label>
+      </div>
+
+      <button class="waves-effect waves-light btn">Crear</button>
+
+
+
+    </form>
+
+  </section>
+-->
+  <section class="margenes">
+    <h2>Listado de empleados</h2>
+    <table>
+      <thead class="center">
+        <tr>
+          <th>Nombre</th>
+          <th>Cargo</th>
+          <th>Departamento</th>
+          <th>Sueldo</th>
+          <th>Acciones </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let empleado of empleadoService.empleados">
+          <td>{{empleado.nombre}}</td>
+          <td>{{empleado.cargo}}</td>
+          <td>{{empleado.departamento}}</td>
+          <td>{{empleado.sueldo }}</td>
+          <td>
+            <button routerLink="/edit/{{empleado._id}}" class="btn margin-lef"><img src="./assets/img/icoEditar.png" height="32px" width="32px"></button>
+            <button (click)="delEmpleado(empleado._id!)" class="btn margin-lef"><img src="./assets/img/icoEliminar.png" height="32px" width="32px"
+                alt=""></button>
+            <!--
+            <a  href="#"><img src="./assets/img/icoEditar.png" height="32px" width="32px"></a>
+            <a href="#"><img src="./assets/img/icoEliminar.png" height="32px" width="32px" alt=""></a>
+          -->
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <!--<h5 *ngIf="empleado.length === 0">No hay productos para mostrar</h5>-->
+  </section>
+
+</section>
